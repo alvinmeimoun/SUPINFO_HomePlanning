@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class WebController {
+public class PublicController {
 
     @RequestMapping(path = { "/", "/home"}, method = RequestMethod.GET)
     public ModelAndView home(){
