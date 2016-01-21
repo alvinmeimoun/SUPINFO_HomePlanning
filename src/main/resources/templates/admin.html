@@ -4,12 +4,44 @@
         <title>SUPINFO Home Planning - Admin</title>
 
         <div th:include="common/themes_and_scripts"/>
+        <link rel="stylesheet" href="css/templates/admin.css" type="text/css"/>
+
+        <!-- boostrap file upload -->
+        <link href="css/libs/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+        <script src="js/libs/fileinput.min.js"></script>
     </head>
     <body>
         <header th:include="section/header"/>
 
-        <div>
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+        <div id="tabs" class="tabs_container">
+            <ul>
+                <li><a href="#tabs-1" th:text="#{admin.tab.planning}">_planning</a></li>
+                <li><a href="#tabs-2" th:text="#{admin.tab.messages}">_messages</a></li>
+            </ul>
+            <div id="tabs-1">
+                <div>
+                    <form th:action="@{/admin/planning/upload}" method="post" class="form-signin" enctype="multipart/form-data">
+                        <label class="control-label" th:text="#{admin.planning.select_file}">Select File</label>
+                        <input id="input-planning-file" type="file" class="file" />
+                        <br/>
+                        <button type="submit" class="btn btn-primary" th:text="#{admin.planning.send}">Submit</button>
+                        <button type="reset" class="btn btn-default" th:text="#{admin.planning.reset}">Reset</button>
+                    </form>
+                </div>
+            </div>
+            <div id="tabs-2">
+                <p></p>
+            </div>
         </div>
+
+        <script>
+            $( "#tabs" ).tabs();
+            $("#input-planning-file").fileinput({
+                showUpload: false,
+                showRemove: false,
+                showPreview: false,
+                allowedFileExtensions : ['csv']
+            });
+        </script>
     </body>
 </html>
