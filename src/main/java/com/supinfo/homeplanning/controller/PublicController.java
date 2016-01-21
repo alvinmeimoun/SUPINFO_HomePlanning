@@ -13,13 +13,5 @@ public class PublicController {
         return new ModelAndView("home");
     }
 
-    @RequestMapping(path = "/hello", method = RequestMethod.GET)
-    public ModelAndView hello(){
-        return new ModelAndView("hello");
-    }
 
-    @RequestMapping(path = "/login", method = RequestMethod.GET)
-    public ModelAndView login(){
-        return new ModelAndView("login");
-    }
 }
