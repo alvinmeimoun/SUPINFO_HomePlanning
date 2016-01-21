@@ -22,7 +22,7 @@
                 <div>
                     <form th:action="@{/admin/planning/upload}" method="post" class="form-signin" enctype="multipart/form-data">
                         <label class="control-label" th:text="#{admin.planning.select_file}">Select File</label>
-                        <input id="input-planning-file" type="file" class="file" />
+                        <input id="input-planning-file" type="file" class="file" name="file" />
                         <br/>
                         <button type="submit" class="btn btn-primary" th:text="#{admin.planning.send}">Submit</button>
                         <button type="reset" class="btn btn-default" th:text="#{admin.planning.reset}">Reset</button>
