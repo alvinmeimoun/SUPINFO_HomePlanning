@@ -9,6 +9,7 @@
         <!-- boostrap file upload -->
         <link href="css/libs/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
         <script src="js/libs/fileinput.min.js"></script>
+        <script src="js/libs/jquery-dataTables.min.js"></script>
     </head>
     <body>
         <header th:include="section/header"/>
@@ -19,6 +20,7 @@
                 <li><a href="#tabs-2" th:text="#{admin.tab.messages}">_messages</a></li>
             </ul>
             <div id="tabs-1">
+                <!-- Planning -->
                 <div>
                     <form th:action="@{/admin/planning/upload}" method="post" class="form-signin" enctype="multipart/form-data">
                         <label class="control-label" th:text="#{admin.planning.select_file}">Select File</label>
@@ -30,18 +32,40 @@
                 </div>
             </div>
             <div id="tabs-2">
-                <p></p>
+                <table id="table_messages" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="message : ${adminModel.messages}">
+                            <td th:text="${message.id}">1</td>
+                            <td th:text="${message.message}">Text ...</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <script>
-            $( "#tabs" ).tabs();
-            $("#input-planning-file").fileinput({
-                showUpload: false,
-                showRemove: false,
-                showPreview: false,
-                allowedFileExtensions : ['csv']
-            });
+            $(document).ready(function() {
+                $("#tabs").tabs();
+                $("#input-planning-file").fileinput({
+                    showUpload: false,
+                    showRemove: false,
+                    showPreview: false,
+                    allowedFileExtensions : ['csv']
+                });
+                $("#table_messages").DataTable( {
+                    pageLength: 10,
+                    scrollCollapse: true,
+                    paging:         false,
+                    searching: false
+                } );
+            } );
+
         </script>
     </body>
 </html>
