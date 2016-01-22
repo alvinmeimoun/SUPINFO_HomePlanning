@@ -26,12 +26,20 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-security")
 
-    testCompile("junit:junit")
+    compile("mysql:mysql-connector-java:5.1.35")
+    compile("com.h2database:h2:1.4.190")
+    compile "com.zaxxer:HikariCP:2.4.2"
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("junit:junit:4.12")
+    testCompile("org.assertj:assertj-core:3.1.0")
+    testCompile("com.ninja-squad:DbSetup:1.6.0")
+    testCompile("com.jayway.restassured:rest-assured:2.5.0")
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    gradleVersion = '2.9'
 }

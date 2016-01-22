@@ -1,9 +1,14 @@
 package com.supinfo.homeplanning.entity;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Entity
+@Table(name = "COURSE")
 public class CourseEntity {
 
+    private Long id;
     private String codeEcts;
     private Date dateTime;
     private String promo;
@@ -12,6 +17,18 @@ public class CourseEntity {
     private Long duration;
     private String salle;
 
+    @Id
+    @NotNull
+    public Long getId() {
+        return id;
+    }
+
+    public CourseEntity setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    @Column(name = "CODE_ECTS")
     public String getCodeEcts() {
         return codeEcts;
     }
@@ -21,6 +38,7 @@ public class CourseEntity {
         return this;
     }
 
+    @Column(name = "DATETIME")
     public Date getDateTime() {
         return dateTime;
     }
@@ -30,6 +48,7 @@ public class CourseEntity {
         return this;
     }
 
+    @Column(name = "PROMO")
     public String getPromo() {
         return promo;
     }
@@ -39,6 +58,7 @@ public class CourseEntity {
         return this;
     }
 
+    @Column(name = "MATIERE")
     public String getMatiere() {
         return matiere;
     }
@@ -48,6 +68,7 @@ public class CourseEntity {
         return this;
     }
 
+    @Column(name = "ENSEIGNANT")
     public String getEnseignant() {
         return enseignant;
     }
@@ -57,6 +78,7 @@ public class CourseEntity {
         return this;
     }
 
+    @Column(name = "DURATION")
     public Long getDuration() {
         return duration;
     }
@@ -66,6 +88,7 @@ public class CourseEntity {
         return this;
     }
 
+    @Column(name = "SALLE")
     public String getSalle() {
         return salle;
     }
