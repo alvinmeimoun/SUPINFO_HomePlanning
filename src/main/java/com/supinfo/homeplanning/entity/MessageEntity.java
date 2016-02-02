@@ -17,8 +17,9 @@ public class MessageEntity {
         return id;
     }
 
-    public void setId(Long id) {
+    public MessageEntity setId(Long id) {
         this.id = id;
+        return this;
     }
 
     @Lob
@@ -27,8 +28,9 @@ public class MessageEntity {
         return message;
     }
 
-    public void setMessage(String message) {
+    public MessageEntity setMessage(String message) {
         this.message = message;
+        return this;
     }
 
     @Column(name = "CREATION_DATE")
@@ -36,7 +38,8 @@ public class MessageEntity {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public MessageEntity setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+        return this;
     }
 }
