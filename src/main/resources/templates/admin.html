@@ -58,10 +58,10 @@
         </div>
 
         <div id="popup_add_msg" class="popup_block">
-            <form>
+            <form id="form_new_message" th:action="@{/admin/message/add}" method="post">
                 <fieldset>
                     <label for="new_message_box">Message</label>
-                    <input type="text" name="message" id="new_message_box" value="" class="text ui-widget-content ui-corner-all"/>
+                    <input type="text" th:name="message" id="new_message_box" value="" class="text ui-widget-content ui-corner-all"/>
 
                     <input type="submit" tabindex="-1" style="position:absolute; top:-1000px"/>
                 </fieldset>

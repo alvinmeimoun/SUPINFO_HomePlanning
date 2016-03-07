@@ -22,7 +22,9 @@ $(document).ready(function() {
         width: 350,
         modal: true,
         buttons: {
-            "Add message": addMessage,
+            "Add message": function(){
+                document.getElementById("form_new_message").submit();
+            },
             Cancel: function() {
                 dialog.dialog( "close" );
             }
@@ -30,13 +32,6 @@ $(document).ready(function() {
         close: function() {
             form[ 0 ].reset();
         }
-    });
-
-    var form = dialog.find( "form" ).on( "submit", function( event ) {
-        event.preventDefault();
-        var msgText = $("new_message_box").value;
-
-        addMessage(msgText);
     });
 
     $( "#bt_add_message" ).button().on( "click", function() {
@@ -56,30 +51,6 @@ function deleteMessage(element){
         data: { messageId: msgId },
         success: function(data){
             row.remove().draw( false );
-        },
-        error: function(){
-            alert('An error has occured');
-        }
-    })
-}
-
-function addMessage(message){
-    $.ajax({
-        url: "/api/admin/message/add",
-        type: 'POST',
-        async: false,
-        data: { message : message},
-        headers: {
-            'X-CSRF-TOKEN': getCookie("X-CSRF-TOKEN")
-        },
-        contentType: 'application/json',
-        success: function(data){
-            table_messages.row.add(
-                [
-                    data,
-                    message
-                ]
-            ).draw(false);
         },
         error: function(){
             alert('An error has occured');
