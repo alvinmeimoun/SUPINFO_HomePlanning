@@ -24,7 +24,7 @@ public class HomeModel {
         this.todayPlanning = todayPlanning;
     }
 
-    public class BookedCourseModel {
+    public static class BookedCourseModel {
         private int promotion;
         private Date startTime;
         private Date endTime;
@@ -36,48 +36,54 @@ public class HomeModel {
             return promotion;
         }
 
-        public void setPromotion(int promotion) {
+        public BookedCourseModel setPromotion(int promotion) {
             this.promotion = promotion;
+            return this;
         }
 
         public Date getStartTime() {
             return startTime;
         }
 
-        public void setStartTime(Date startTime) {
+        public BookedCourseModel setStartTime(Date startTime) {
             this.startTime = startTime;
+            return this;
         }
 
         public Date getEndTime() {
             return endTime;
         }
 
-        public void setEndTime(Date endTime) {
+        public BookedCourseModel setEndTime(Date endTime) {
             this.endTime = endTime;
+            return this;
         }
 
         public String getName() {
             return name;
         }
 
-        public void setName(String name) {
+        public BookedCourseModel setName(String name) {
             this.name = name;
+            return this;
         }
 
         public String getTeacher() {
             return teacher;
         }
 
-        public void setTeacher(String teacher) {
+        public BookedCourseModel setTeacher(String teacher) {
             this.teacher = teacher;
+            return this;
         }
 
         public String getSalle() {
             return salle;
         }
 
-        public void setSalle(String salle) {
+        public BookedCourseModel setSalle(String salle) {
             this.salle = salle;
+            return this;
         }
     }
 
