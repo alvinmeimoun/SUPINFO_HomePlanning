@@ -61,12 +61,23 @@
             <form id="form_new_message" th:action="@{/admin/message/add}" method="post">
                 <fieldset>
                     <label for="new_message_box">Message</label>
-                    <input type="text" th:name="message" id="new_message_box" value="" class="text ui-widget-content ui-corner-all"/>
+                    <textarea cols="50" rows="10" th:name="message" id="new_message_box" value="" class="text ui-widget-content ui-corner-all"></textarea>
 
                     <input type="submit" tabindex="-1" style="position:absolute; top:-1000px"/>
                 </fieldset>
             </form>
         </div>
 
+        <script type="text/javascript">
+
+            // Permet de cacher les boutons générés par jquery lors de la selection du planning
+            $(function() {
+                $("input:file").change(function (){
+                    $(".fileinput-remove").css("display","none");
+                    $(".fileinput-cancel").css("display","none");
+                    $(".fileinput-upload").css("display","none");
+                });
+            });
+        </script>
     </body>
 </html>
