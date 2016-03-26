@@ -6,10 +6,18 @@
         <div th:include="common/themes_and_scripts"/>
     </head>
     <body>
+    <script type="text/javascript">
+        $(function(){
+            $("ul#ticker01").liScroll();
+        });
+    </script>
         <header th:include="section/header"/>
 
-        <div>
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
-        </div>
+
+        <ul id="ticker01" >
+
+            <li th:each="message : ${homeModel.messages}"><span th:text="${message}"></span></li>
+        </ul>
+
     </body>
 </html>
