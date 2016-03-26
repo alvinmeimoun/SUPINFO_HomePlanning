@@ -1,15 +1,73 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-        <title>SUPINFO Home Planning</title>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>SUPINFO Home Planning</title>
 
-        <div th:include="common/themes_and_scripts"/>
-    </head>
-    <body>
-        <header th:include="section/header"/>
+    <div th:include="common/themes_and_scripts"/>
+    <link rel="stylesheet" href="css/templates/home.css" type="text/css"/>
+</head>
+<body>
 
-        <div>
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+<div class="container">
+
+    <div class="row" style="margin-top: 30px;">
+
+        <div class="col-sm-6" style="background-color:dodgerblue; width: 80px; height: 100px;">
+            <p>A.SC 1</p>
         </div>
-    </body>
+        <div class="col-sm-6" style="background-color:gray; width: 600px; margin-left: 2px; height: 100px;">
+            <p>Course 1</p>
+        </div>
+
+    </div>
+    <div class="row" style="margin-top: 15px;">
+
+        <div class="col-sm-6" style="background-color:dodgerblue; width: 80px; height: 100px;">
+            <p>A.SC 2</p>
+        </div>
+        <div class="col-sm-6" style="background-color:gray; width: 600px; margin-left: 2px; height: 100px;">
+            <p>Course 1</p>
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+
+        <div class="col-sm-6" style="background-color:dodgerblue; width: 80px; height: 100px;">
+            <p>B.SC</p>
+        </div>
+        <div class="col-sm-6" style="background-color:gray; width: 600px; margin-left: 2px; height: 100px; ">
+            <p>Course 1</p>
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+
+        <div class="col-sm-6" style="background-color:dodgerblue; width: 80px;height: 100px;">
+            <p>M.SC 1</p>
+        </div>
+        <div class="col-sm-6" style="background-color:gray; width: 600px; margin-left: 2px; height: 100px;">
+            <p>Course 1</p>
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+
+        <div class="col-sm-6" style="background-color:dodgerblue; width: 80px; height: 100px;">
+            <p>M.SC 2</p>
+        </div>
+        <div class="col-sm-6" style="background-color:gray; width: 600px; margin-left: 2px; height: 100px;">
+            <p>Course 1</p>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</body>
 </html>
