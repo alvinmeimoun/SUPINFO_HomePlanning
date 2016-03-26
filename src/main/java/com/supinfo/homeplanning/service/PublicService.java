@@ -35,19 +35,34 @@ public class PublicService {
         List<CourseEntity> todayCoursesEntities = courseRepository.findByDateTimeBetweenOrderByDateTimeAsc(forDate,
                 Date.from(forDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().atTime(23, 59).atZone(ZoneId.systemDefault()).toInstant()));
 
-        List<HomeModel.BookedCourseModel> coursesModels = new ArrayList<>();
-
         todayCoursesEntities.forEach(c -> {
             Date endDate = new Date(c.getDateTime().getTime() + c.getDuration());
-            coursesModels.add(new HomeModel.BookedCourseModel()
+            HomeModel.BookedCourseModel courseModel = new HomeModel.BookedCourseModel()
                 .setName(c.getCodeEcts() + " - " + c.getMatiere())
                 .setPromotion(Integer.parseInt(c.getPromo()))
                 .setSalle(c.getSalle())
                 .setTeacher(c.getEnseignant())
                 .setStartTime(c.getDateTime())
-                .setEndTime(endDate));
+                .setEndTime(endDate);
+
+            switch (c.getPromo()){
+                case "1":
+                    model.getAsc1planning().add(courseModel);
+                    break;
+                case "2":
+                    model.getAsc2planning().add(courseModel);
+                    break;
+                case "3":
+                    model.getBscplanning().add(courseModel);
+                    break;
+                case "4":
+                    model.getMsc1planning().add(courseModel);
+                    break;
+                case "5":
+                    model.getMsc2planning().add(courseModel);
+                    break;
+            }
         });
-        model.setTodayPlanning(coursesModels);
 
         return model;
     }
