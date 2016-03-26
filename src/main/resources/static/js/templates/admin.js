@@ -18,14 +18,14 @@ $(document).ready(function() {
     //Add message dialog
     var dialog = $( "#popup_add_msg" ).dialog({
         autoOpen: false,
-        height: 180,
-        width: 350,
+        height: 400,
+        width: 500,
         modal: true,
         buttons: {
-            "Add message": function(){
+            "Ajouter le message": function(){
                 document.getElementById("form_new_message").submit();
             },
-            Cancel: function() {
+            "Annuler": function() {
                 dialog.dialog( "close" );
             }
         },
