@@ -19,24 +19,30 @@
 
     <div class="row" id="asc1_planning_container" style="margin-top: 30px;">
 
-        <div class="col-md-1" style="background-color:dodgerblue; height: 100px;">
+        <div class="col-md-1 classNames">
             <p>A.Sc 1</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
-            <ul id="asc1_planning_ul" class="planningItems">
-                <li th:each="course : ${homeModel.asc1planning}"><span th:text="${course.code}"></span></li>
+            <ul id="asc1_planning_ul" class="planningItems" style="text-align: center">
+                <li th:each="course : ${homeModel.asc1planning}">
+                    <span style="font-size:15px; padding-bottom: 1%;" th:text="${course.name}"></span><br/>
+                    <span  style="font-size:20px; font-weight: bold;"  th:text="Salle + ${course.salle}"></span>
+                </li>
             </ul>
         </div>
 
     </div>
     <div class="row" id="asc2_planning_container" style="margin-top: 15px;">
 
-        <div class="col-md-1" style="background-color:dodgerblue; height: 100px;">
+        <div class="col-md-1 classNames">
             <p>A.Sc 2</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
             <ul id="asc2_planning_ul" class="planningItems">
-                <li th:each="course : ${homeModel.asc2planning}"><span th:text="${course.code}"></span></li>
+                <li th:each="course : ${homeModel.asc2planning}">
+                    <span style="font-size:15px; padding-bottom: 1%;" th:text="${course.name}"></span><br/>
+                    <span  style="font-size:20px; font-weight: bold;"  th:text="Salle + ${course.salle}"></span>
+                </li>
             </ul>
         </div>
 
@@ -44,12 +50,15 @@
 
     <div class="row" id="bsc_planning_container" style="margin-top: 15px;">
 
-        <div class="col-md-1" style="background-color:dodgerblue; height: 100px;">
+        <div class="col-md-1 classNames">
             <p>B.Sc</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
             <ul id="bsc_planning_ul" class="planningItems">
-                <li th:each="course : ${homeModel.bscplanning}"><span th:text="${course.code}"></span></li>
+                <li th:each="course : ${homeModel.bscplanning}">
+                    <span style="font-size:15px; padding-bottom: 1%;" th:text="${course.name}"></span><br/>
+                    <span  style="font-size:20px; font-weight: bold;"  th:text="Salle + ${course.salle}"></span>
+                </li>
             </ul>
         </div>
 
@@ -57,12 +66,15 @@
 
     <div class="row" id="msc1_planning_container" style="margin-top: 15px;">
 
-        <div class="col-md-1" style="background-color:dodgerblue; height: 100px;">
+        <div class="col-md-1 classNames">
             <p>M.Sc 1</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
             <ul id="msc1_planning_ul" class="planningItems">
-                <li th:each="course : ${homeModel.msc1planning}"><span th:text="${course.code}"></span></li>
+                <li th:each="course : ${homeModel.msc1planning}">
+                    <span style="font-size:15px; padding-bottom: 1%;" th:text="${course.name}"></span><br/>
+                    <span  style="font-size:20px; font-weight: bold;"  th:text="Salle + ${course.salle}"></span>
+                </li>
             </ul>
         </div>
 
@@ -70,12 +82,15 @@
 
     <div class="row" id="msc2_planning_container" style="margin-top: 15px;">
 
-        <div class="col-md-1" style="background-color:dodgerblue; height: 100px;">
+        <div class="col-md-1 classNames">
             <p>M.Sc 2</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
             <ul id="msc2_planning_ul" class="planningItems">
-                <li th:each="course : ${homeModel.msc2planning}"><span th:text="${course.code}"></span></li>
+                <li th:each="course : ${homeModel.msc2planning}">
+                    <span style="font-size:15px; padding-bottom: 1%;" th:text="${course.name}"></span><br/>
+                    <span  style="font-size:20px; font-weight: bold;"  th:text="Salle + ${course.salle}"></span>
+                </li>
             </ul>
         </div>
 

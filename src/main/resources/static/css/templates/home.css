@@ -7,6 +7,7 @@ ul.planningItems
     width:100%;
     height: 100%;
     background-color:#EEEEEE;
+    text-align: center;
 }
 
 ul.planningItems li
@@ -30,4 +31,17 @@ ul.planningItems li a
     display:block;
     text-align:center;
 
+
+}
+
+.classNames {
+
+    background-color:#14426e;
+    text-align:center;
+    vertical-align: middle;
+    color:white;
+    padding-top:3%;
+    font-size:19px;
+    font-family: Verdana;
+    height: 100px;
 }

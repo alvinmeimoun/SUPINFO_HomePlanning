@@ -9,7 +9,7 @@
     /*padding: 0;*/
     bottom:0;
     overflow: hidden;
-    position:fixed; width:100%; height:10%; background-color:#FCCB71; padding:5px;
+    position:fixed; width:100%; height:10%; background-color:#14426e; padding:5px;
 }
 .tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
     position: relative;
@@ -21,7 +21,8 @@
 ul.newsticker { /* that's your list */
     position: relative;
     left: 750px;
-    font: bold 30px Helvetica;
+    font: 30px Verdana;
+    color: white;
     list-style-type: none;
     margin: 0;
     padding: 0;
