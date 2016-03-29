@@ -1,6 +1,5 @@
 package com.supinfo.homeplanning.controller;
 
-import com.supinfo.homeplanning.entity.CourseEntity;
 import com.supinfo.homeplanning.model.HomeModel;
 import com.supinfo.homeplanning.service.PublicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.List;
 
 @Controller
 public class PublicController {

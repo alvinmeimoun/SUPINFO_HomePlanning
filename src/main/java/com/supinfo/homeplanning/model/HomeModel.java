@@ -76,6 +76,7 @@ public class HomeModel {
         private String name;
         private String teacher;
         private String salle;
+        private String code;
 
         public int getPromotion() {
             return promotion;
@@ -128,6 +129,15 @@ public class HomeModel {
 
         public BookedCourseModel setSalle(String salle) {
             this.salle = salle;
+            return this;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public BookedCourseModel setCode(String code) {
+            this.code = code;
             return this;
         }
     }

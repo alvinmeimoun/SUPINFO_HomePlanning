@@ -43,6 +43,7 @@ public class PublicService {
                 .setSalle(c.getSalle())
                 .setTeacher(c.getEnseignant())
                 .setStartTime(c.getDateTime())
+                .setCode(c.getCodeEcts())
                 .setEndTime(endDate);
 
             switch (c.getPromo()){

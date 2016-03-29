@@ -23,9 +23,8 @@
             <p>A.Sc 1</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
-            <ul class="planningItems">
-                <li><a href="#">first</a></li>
-                <li><a href="#">second</a></li>
+            <ul id="asc1_planning_ul" class="planningItems">
+                <li th:each="course : ${homeModel.asc1planning}"><span th:text="${course.code}"></span></li>
             </ul>
         </div>
 
@@ -36,9 +35,8 @@
             <p>A.Sc 2</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
-            <ul class="planningItems">
-                <li><a href="#">first</a></li>
-                <li><a href="#">second</a></li>
+            <ul id="asc2_planning_ul" class="planningItems">
+                <li th:each="course : ${homeModel.asc2planning}"><span th:text="${course.code}"></span></li>
             </ul>
         </div>
 
@@ -50,9 +48,8 @@
             <p>B.Sc</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
-            <ul class="planningItems">
-                <li><a href="#">first</a></li>
-                <li><a href="#">second</a></li>
+            <ul id="bsc_planning_ul" class="planningItems">
+                <li th:each="course : ${homeModel.bscplanning}"><span th:text="${course.code}"></span></li>
             </ul>
         </div>
 
@@ -64,9 +61,8 @@
             <p>M.Sc 1</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
-            <ul class="planningItems">
-                <li><a href="#">first</a></li>
-                <li><a href="#">second</a></li>
+            <ul id="msc1_planning_ul" class="planningItems">
+                <li th:each="course : ${homeModel.msc1planning}"><span th:text="${course.code}"></span></li>
             </ul>
         </div>
 
@@ -78,9 +74,8 @@
             <p>M.Sc 2</p>
         </div>
         <div class="col-md-11" style="height: 100px;">
-            <ul class="planningItems">
-                <li><a href="#">first</a></li>
-                <li><a href="#">second</a></li>
+            <ul id="msc2_planning_ul" class="planningItems">
+                <li th:each="course : ${homeModel.msc2planning}"><span th:text="${course.code}"></span></li>
             </ul>
         </div>
 
@@ -96,4 +91,45 @@
 
 
 </body>
+
+
+<script>
+    $(document).ready(function() {
+        var asc1Count =  $("#asc1_planning_ul").children().length;
+        var asc1WidthPercent = 95;
+        if(asc1Count > 0) { asc1WidthPercent = 95/asc1Count; }
+        $('#asc1_planning_ul li').each(function( index ) {
+            $(this).css({width : asc1WidthPercent+'%'});
+        });
+        
+        var asc2Count =  $("#asc2_planning_ul").children().length;
+        var asc2WidthPercent = 95;
+        if(asc2Count > 0) { asc2WidthPercent = 95/asc2Count; }
+        $('#asc2_planning_ul li').each(function( index ) {
+            $(this).css({width : asc2WidthPercent+'%'});
+        });
+        
+        var bscCount =  $("#bsc_planning_ul").children().length;
+        var bscWidthPercent = 95;
+        if(bscCount > 0) { bscWidthPercent = 95/bscCount; }
+        $('#bsc_planning_ul li').each(function( index ) {
+            $(this).css({width : bscWidthPercent+'%'});
+        });
+        
+        var msc1Count =  $("#msc1_planning_ul").children().length;
+        var msc1WidthPercent = 95;
+        if(msc1Count > 0) { msc1WidthPercent = 95/msc1Count; }
+        $('#msc1_planning_ul li').each(function( index ) {
+            $(this).css({width : msc1WidthPercent+'%'});
+        });
+        
+        var msc2Count =  $("#msc2_planning_ul").children().length;
+        var msc2WidthPercent = 95;
+        if(msc2Count > 0) { msc2WidthPercent = 95/msc2Count; }
+        $('#msc2_planning_ul li').each(function( index ) {
+            $(this).css({width : msc2WidthPercent+'%'});
+        });
+    });
+</script>
+
 </html>
