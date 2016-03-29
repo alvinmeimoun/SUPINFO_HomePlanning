@@ -91,7 +91,7 @@
 
 <ul id="ticker01">
 
-    <li th:each="message : ${homeModel.messages}"><span th:text="${message}"></span></li>
+    <li style="white-space:pre;" th:each="message : ${homeModel.messages}"><span th:text="${message + '            '}"></span></li>
 </ul>
 
 
