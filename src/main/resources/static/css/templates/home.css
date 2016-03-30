@@ -45,3 +45,16 @@ ul.planningItems li a
     font-family: Verdana;
     height: 100px;
 }
+
+.matiere_label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:15px;
+    padding-bottom: 1%;
+}
+
+.classe_label {
+    font-size:17px;
+    font-weight: bold;
+}

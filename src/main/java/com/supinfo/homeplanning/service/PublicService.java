@@ -6,6 +6,7 @@ import com.supinfo.homeplanning.entity.MessageEntity;
 import com.supinfo.homeplanning.model.HomeModel;
 import com.supinfo.homeplanning.repository.CourseRepository;
 import com.supinfo.homeplanning.repository.MessageRepository;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,11 +41,14 @@ public class PublicService {
             HomeModel.BookedCourseModel courseModel = new HomeModel.BookedCourseModel()
                 .setName(c.getCodeEcts() + " - " + c.getMatiere())
                 .setPromotion(Integer.parseInt(c.getPromo()))
-                .setSalle(c.getSalle())
                 .setTeacher(c.getEnseignant())
                 .setStartTime(c.getDateTime())
                 .setCode(c.getCodeEcts())
                 .setEndTime(endDate);
+
+            if(c.getSalle() == null || c.getSalle().length() == 0) courseModel.setSalle("");
+            else if (StringUtils.isNumeric(c.getSalle())) courseModel.setSalle("Salle "+c.getSalle());
+            else courseModel.setSalle(c.getSalle());
 
             switch (c.getPromo()){
                 case "1":
