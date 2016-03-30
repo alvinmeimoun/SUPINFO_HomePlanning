@@ -56,18 +56,78 @@ public class PublicService {
 
             switch (c.getPromo()){
                 case "1":
+                    if(model.getAsc1planning().size() != 0){
+                        HomeModel.BookedCourseModel lastModel = model.getAsc1planning().get(model.getAsc1planning().size()-1);
+                        if(lastModel.getSalle().equals(courseModel.getSalle()) && lastModel.getCode().equals(courseModel.getCode())
+                                && lastModel.getTeacher().equals(courseModel.getTeacher())
+                                && lastModel.getName().equals(courseModel.getName())
+                                && lastModel.getEndHour().equals(courseModel.getStartHour())){
+                            //C'est le même cour mais splitté, on l'unifie au cours précédent
+                            lastModel.setEndHour(courseModel.getEndHour());
+                            break;
+                        }
+                    }
+                    //Ce n'est pas le même cours, on ajoute une nouvelle entrée
                     model.getAsc1planning().add(courseModel);
                     break;
                 case "2":
+                    if(model.getAsc2planning().size() != 0){
+                        HomeModel.BookedCourseModel lastModel = model.getAsc2planning().get(model.getAsc2planning().size()-1);
+                        if(lastModel.getSalle().equals(courseModel.getSalle()) && lastModel.getCode().equals(courseModel.getCode())
+                                && lastModel.getTeacher().equals(courseModel.getTeacher())
+                                && lastModel.getName().equals(courseModel.getName())
+                        && lastModel.getEndHour().equals(courseModel.getStartHour())){
+                            //C'est le même cour mais splitté, on l'unifie au cours précédent
+                            lastModel.setEndHour(courseModel.getEndHour());
+                            break;
+                        }
+                    }
+                    //Ce n'est pas le même cours, on ajoute une nouvelle entrée
                     model.getAsc2planning().add(courseModel);
                     break;
                 case "3":
+                    if(model.getBscplanning().size() != 0){
+                        HomeModel.BookedCourseModel lastModel = model.getBscplanning().get(model.getBscplanning().size()-1);
+                        if(lastModel.getSalle().equals(courseModel.getSalle()) && lastModel.getCode().equals(courseModel.getCode())
+                                && lastModel.getTeacher().equals(courseModel.getTeacher())
+                                && lastModel.getName().equals(courseModel.getName())
+                        && lastModel.getEndHour().equals(courseModel.getStartHour())){
+                            //C'est le même cour mais splitté, on l'unifie au cours précédent
+                            lastModel.setEndHour(courseModel.getEndHour());
+                            break;
+                        }
+                    }
+                    //Ce n'est pas le même cours, on ajoute une nouvelle entrée
                     model.getBscplanning().add(courseModel);
                     break;
                 case "4":
+                    if(model.getMsc1planning().size() != 0){
+                        HomeModel.BookedCourseModel lastModel = model.getMsc1planning().get(model.getMsc1planning().size()-1);
+                        if(lastModel.getSalle().equals(courseModel.getSalle()) && lastModel.getCode().equals(courseModel.getCode())
+                                && lastModel.getTeacher().equals(courseModel.getTeacher())
+                                && lastModel.getName().equals(courseModel.getName())
+                        && lastModel.getEndHour().equals(courseModel.getStartHour())){
+                            //C'est le même cour mais splitté, on l'unifie au cours précédent
+                            lastModel.setEndHour(courseModel.getEndHour());
+                            break;
+                        }
+                    }
+                    //Ce n'est pas le même cours, on ajoute une nouvelle entrée
                     model.getMsc1planning().add(courseModel);
                     break;
                 case "5":
+                    if(model.getMsc2planning().size() != 0){
+                        HomeModel.BookedCourseModel lastModel = model.getMsc2planning().get(model.getMsc2planning().size()-1);
+                        if(lastModel.getSalle().equals(courseModel.getSalle()) && lastModel.getCode().equals(courseModel.getCode())
+                                && lastModel.getTeacher().equals(courseModel.getTeacher())
+                                && lastModel.getName().equals(courseModel.getName())
+                        && lastModel.getEndHour().equals(courseModel.getStartHour())){
+                            //C'est le même cour mais splitté, on l'unifie au cours précédent
+                            lastModel.setEndHour(courseModel.getEndHour());
+                            break;
+                        }
+                    }
+                    //Ce n'est pas le même cours, on ajoute une nouvelle entrée
                     model.getMsc2planning().add(courseModel);
                     break;
             }
