@@ -71,8 +71,8 @@ public class HomeModel {
 
     public static class BookedCourseModel {
         private int promotion;
-        private Date startTime;
-        private Date endTime;
+        private String startHour;
+        private String endHour;
         private String name;
         private String teacher;
         private String salle;
@@ -87,22 +87,26 @@ public class HomeModel {
             return this;
         }
 
-        public Date getStartTime() {
-            return startTime;
+        public String getStartHour() {
+            return startHour;
         }
 
-        public BookedCourseModel setStartTime(Date startTime) {
-            this.startTime = startTime;
+        public BookedCourseModel setStartHour(String startHour) {
+            this.startHour = startHour;
             return this;
         }
 
-        public Date getEndTime() {
-            return endTime;
+        public String getEndHour() {
+            return endHour;
         }
 
-        public BookedCourseModel setEndTime(Date endTime) {
-            this.endTime = endTime;
+        public BookedCourseModel setEndHour(String endHour) {
+            this.endHour = endHour;
             return this;
+        }
+
+        public String getStartEndHour(){
+            return startHour + " - " + endHour;
         }
 
         public String getName() {

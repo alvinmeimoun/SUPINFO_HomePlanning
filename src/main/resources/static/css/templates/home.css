@@ -51,10 +51,16 @@ ul.planningItems li a
     overflow: hidden;
     text-overflow: ellipsis;
     font-size:15px;
-    padding-bottom: 1%;
+    padding-bottom: 2%;
 }
 
 .classe_label {
     font-size:17px;
     font-weight: bold;
+    padding-bottom: 2%;
+}
+
+.hour_label {
+    font-size:16px;
+    font-weight: normal;
 }

@@ -26,7 +26,8 @@
             <ul id="asc1_planning_ul" class="planningItems" style="text-align: center">
                 <li th:each="course : ${homeModel.asc1planning}">
                     <div class="matiere_label" th:text="${course.name}"></div>
-                    <div class="classe_label"  th:text="${course.salle}"></div>
+                    <div class="classe_label"  th:text="${course.salle} + '&nbsp;'"></div>
+                    <div class="hour_label"  th:text="${course.startEndHour}"></div>
                 </li>
             </ul>
         </div>
@@ -41,7 +42,8 @@
             <ul id="asc2_planning_ul" class="planningItems">
                 <li th:each="course : ${homeModel.asc2planning}">
                     <div class="matiere_label" th:text="${course.name}"></div>
-                    <div class="classe_label"  th:text="${course.salle}"></div>
+                    <div class="classe_label"  th:text="${course.salle} + '&nbsp;'"></div>
+                    <div class="hour_label"  th:text="${course.startEndHour}"></div>
                 </li>
             </ul>
         </div>
@@ -57,7 +59,8 @@
             <ul id="bsc_planning_ul" class="planningItems">
                 <li th:each="course : ${homeModel.bscplanning}">
                     <div class="matiere_label" th:text="${course.name}"></div>
-                    <div class="classe_label"  th:text="${course.salle}"></div>
+                    <div class="classe_label"  th:text="${course.salle} + '&nbsp;'"></div>
+                    <div class="hour_label"  th:text="${course.startEndHour}"></div>
                 </li>
             </ul>
         </div>
@@ -73,7 +76,8 @@
             <ul id="msc1_planning_ul" class="planningItems">
                 <li th:each="course : ${homeModel.msc1planning}">
                     <div class="matiere_label" th:text="${course.name}"></div>
-                    <div class="classe_label"  th:text="${course.salle}"></div>
+                    <div class="classe_label"  th:text="${course.salle} + '&nbsp;'"></div>
+                    <div class="hour_label"  th:text="${course.startEndHour}"></div>
                 </li>
             </ul>
         </div>
@@ -89,7 +93,8 @@
             <ul id="msc2_planning_ul" class="planningItems">
                 <li th:each="course : ${homeModel.msc2planning}">
                     <div class="matiere_label" th:text="${course.name}"></div>
-                    <div class="classe_label" th:text="${course.salle}"></div>
+                    <div class="classe_label"  th:text="${course.salle} + '&nbsp;'"></div>
+                    <div class="hour_label"  th:text="${course.startEndHour}"></div>
                 </li>
             </ul>
         </div>

@@ -10,10 +10,12 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 @Service
@@ -38,13 +40,15 @@ public class PublicService {
 
         todayCoursesEntities.forEach(c -> {
             Date endDate = new Date(c.getDateTime().getTime() + c.getDuration());
+            DateFormat hourDf = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+
             HomeModel.BookedCourseModel courseModel = new HomeModel.BookedCourseModel()
                 .setName(c.getCodeEcts() + " - " + c.getMatiere())
                 .setPromotion(Integer.parseInt(c.getPromo()))
                 .setTeacher(c.getEnseignant())
-                .setStartTime(c.getDateTime())
                 .setCode(c.getCodeEcts())
-                .setEndTime(endDate);
+                .setStartHour(hourDf.format(c.getDateTime()))
+                .setEndHour(hourDf.format(endDate));
 
             if(c.getSalle() == null || c.getSalle().length() == 0) courseModel.setSalle("");
             else if (StringUtils.isNumeric(c.getSalle())) courseModel.setSalle("Salle "+c.getSalle());
