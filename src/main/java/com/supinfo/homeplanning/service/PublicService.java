@@ -35,6 +35,7 @@ public class PublicService {
                 .collect(Collectors.toList()));
 
         //Courses
+        forDate = Date.from(forDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().atTime(00, 01).atZone(ZoneId.systemDefault()).toInstant());
         List<CourseEntity> todayCoursesEntities = courseRepository.findByDateTimeBetweenOrderByDateTimeAsc(forDate,
                 Date.from(forDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().atTime(23, 59).atZone(ZoneId.systemDefault()).toInstant()));
 
