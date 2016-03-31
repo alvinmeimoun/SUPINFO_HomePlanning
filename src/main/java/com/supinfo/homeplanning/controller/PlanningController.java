@@ -16,8 +16,15 @@ public class PlanningController {
 
     @RequestMapping(path = "/admin/planning/upload", method = RequestMethod.POST, consumes = "multipart/form-data")
     public String uploadPlanning(@RequestParam("file") MultipartFile file) throws Exception {
-        planningService.uploadPlanning(file.getInputStream());
-        return "redirect:/admin";
+        try {
+            planningService.uploadPlanning(file.getInputStream());
+
+            return "redirect:/admin?success=true";
+        }
+        catch (Exception e)
+        {
+            return "redirect:/admin?success=false";
+        }
     }
 
 }

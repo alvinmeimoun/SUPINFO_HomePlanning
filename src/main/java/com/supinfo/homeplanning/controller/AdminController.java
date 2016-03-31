@@ -35,4 +35,10 @@ public class AdminController {
         return new ModelAndView("login");
     }
 
+    @RequestMapping(path = "/logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request, HttpServletResponse response){
+
+        response.addCookie(new Cookie("JSESSIONID", null));
+        return "redirect:/home";
+    }
 }

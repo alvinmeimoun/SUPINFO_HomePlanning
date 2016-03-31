@@ -5,7 +5,7 @@
 
         <div th:include="common/themes_and_scripts"/>
         <link rel="stylesheet" href="css/templates/admin.css" type="text/css"/>
-
+        <meta charset="UTF-8" />
         <!-- boostrap file upload -->
         <link href="css/libs/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
         <script src="js/libs/fileinput.min.js"></script>
@@ -14,7 +14,17 @@
     </head>
     <body>
         <header th:include="section/header"/>
-
+        <div class="container">
+        <div th:if="${param.success != null}">
+        <div class="alert alert-success alert-dismissible" th:if="${param.success[0] == 'true'}"  style="margin-top:5%;" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            Le planning a bien été enregistré.
+        </div>
+            <div class="alert alert-error alert-dismissible" th:if="${param.success[0] == 'false'}"  style="margin-top:5%;" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Un problème est survenu lors de l'enregistrement.
+            </div>
+        </div>
         <div id="tabs" class="tabs_container">
             <ul>
                 <li><a href="#tabs-1" th:text="#{admin.tab.planning}">_planning</a></li>
@@ -67,10 +77,10 @@
                 </fieldset>
             </form>
         </div>
-
+        </div>
         <script type="text/javascript">
 
-            // Permet de cacher les boutons g�n�r�s par jquery lors de la selection du planning
+            // Permet de cacher les boutons générés par jquery lors de la selection du planning
             $(function() {
                 $("input:file").change(function (){
                     $(".fileinput-remove").css("display","none");
